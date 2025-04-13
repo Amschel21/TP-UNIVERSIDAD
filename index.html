@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema Universidad</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.getElementById("carrera-select").addEventListener("change", mostrarMaterias);
+      document.getElementById("form-alumno").addEventListener("submit", function(e) {
+        e.preventDefault();
+        alert("Alumno registrado y clave enviada por correo electrónico.");
+        this.reset();
+      });
+      document.getElementById("form-login").addEventListener("submit", function(e) {
+        e.preventDefault();
+        const user = document.getElementById("user").value;
+        const pass = document.getElementById("pass").value;
+        if(user === "univ2024" && pass === "Univ897ersidad") {
+          alert("Login correcto. Bienvenido a la plataforma de administración.");
+        } else {
+          alert("Credenciales incorrectas");
+        }
+      });
+    });
+
+    function toggleTheme() {
+      document.body.classList.toggle('dark-mode');
+    }
+
+    function mostrarMaterias() {
+      const materiasPorCarrera = {
+        "Ingeniería en Sistemas": ` 
+          <p><strong>Año 1 - Cuatrimestre 1</strong></p>
+          <ul>
+            <li>Introducción a la Programación</li>
+            <li>Matemática I</li>
+            <li>Comunicación Oral y Escrita</li>
+            <li>Inglés Técnico I</li>
+          </ul>
+          <p><strong>Año 1 - Cuatrimestre 2</strong></p>
+          <ul>
+            <li>Algoritmos y Estructuras de Datos</li>
+            <li>Matemática II</li>
+            <li>Inglés Técnico II</li>
+            <li>Arquitectura de Computadoras</li>
+          </ul>
+        `,
+        "Administración de Empresas": ` 
+          <p><strong>Año 1 - Cuatrimestre 1</strong></p>
+          <ul>
+            <li>Economía I</li>
+            <li>Contabilidad I</li>
+            <li>Administración General</li>
+            <li>Matemática Financiera</li>
+          </ul>
+          <p><strong>Año 1 - Cuatrimestre 2</strong></p>
+          <ul>
+            <li>Marketing</li>
+            <li>Microeconomía</li>
+            <li>Estadística Aplicada</li>
+            <li>Derecho Comercial</li>
+          </ul>
+        `,
+        "Psicología": ` 
+          <p><strong>Año 1 - Cuatrimestre 1</strong></p>
+          <ul>
+            <li>Introducción a la Psicología</li>
+            <li>Historia de la Psicología</li>
+            <li>Biología del Comportamiento</li>
+            <li>Psicología Evolutiva</li>
+          </ul>
+          <p><strong>Año 1 - Cuatrimestre 2</strong></p>
+          <ul>
+            <li>Teorías de la Personalidad</li>
+            <li>Neuropsicología</li>
+            <li>Psicología Social</li>
+            <li>Estadística</li>
+          </ul>
+        `,
+        "Derecho": ` 
+          <p><strong>Año 1 - Cuatrimestre 1</strong></p>
+          <ul>
+            <li>Introducción al Derecho</li>
+            <li>Derecho Romano</li>
+            <li>Sociología Jurídica</li>
+            <li>Teoría del Estado</li>
+          </ul>
+          <p><strong>Año 1 - Cuatrimestre 2</strong></p>
+          <ul>
+            <li>Derecho Civil I</li>
+            <li>Derecho Penal I</li>
+            <li>Derecho Constitucional</li>
+            <li>Derecho Político</li>
+          </ul>
+        `,
+        "Medicina": ` 
+          <p><strong>Año 1 - Cuatrimestre 1</strong></p>
+          <ul>
+            <li>Anatomía I</li>
+            <li>Biología Celular</li>
+            <li>Histología</li>
+            <li>Salud Pública</li>
+          </ul>
+          <p><strong>Año 1 - Cuatrimestre 2</strong></p>
+          <ul>
+            <li>Fisiología I</li>
+            <li>Bioquímica</li>
+            <li>Embriología</li>
+            <li>Psicología Médica</li>
+          </ul>
+        `,
+        "Contador Público": ` 
+          <p><strong>Año 1 - Cuatrimestre 1</strong></p>
+          <ul>
+            <li>Contabilidad Básica</li>
+            <li>Matemática Financiera</li>
+            <li>Derecho Comercial</li>
+            <li>Economía General</li>
+          </ul>
+          <p><strong>Año 1 - Cuatrimestre 2</strong></p>
+          <ul>
+            <li>Contabilidad Intermedia</li>
+            <li>Impuestos I</li>
+            <li>Estadística I</li>
+            <li>Informática Aplicada</li>
+          </ul>
+        `,
+        "Ingeniería Industrial": ` 
+          <p><strong>Año 1 - Cuatrimestre 1</strong></p>
+          <ul>
+            <li>Física I</li>
+            <li>Matemática I</li>
+            <li>Introducción a la Ingeniería</li>
+            <li>Química General</li>
+          </ul>
+          <p><strong>Año 1 - Cuatrimestre 2</strong></p>
+          <ul>
+            <li>Física II</li>
+            <li>Matemática II</li>
+            <li>Dibujo Técnico</li>
+            <li>Materiales Industriales</li>
+          </ul>
+        `,
+        "Licenciatura en Biotecnología": ` 
+          <p><strong>Año 1 - Cuatrimestre 1</strong></p>
+          <ul>
+            <li>Biología General</li>
+            <li>Química Orgánica</li>
+            <li>Matemática</li>
+            <li>Genética Básica</li>
+          </ul>
+          <p><strong>Año 1 - Cuatrimestre 2</strong></p>
+          <ul>
+            <li>Microbiología</li>
+            <li>Física para Ciencias Biológicas</li>
+            <li>Bioquímica</li>
+            <li>Estadística para Biotecnología</li>
+          </ul>
+        `
+      };
+
+      const carreraSeleccionada = document.getElementById("carrera-select").value;
+      const contenedorMaterias = document.getElementById("materias-container");
+      contenedorMaterias.innerHTML = materiasPorCarrera[carreraSeleccionada] || '<p>No hay materias registradas para esta carrera.</p>';
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <img src="./imagen/universidad-imagen.jpeg" alt="Logo Universidad" class="logo">
+    <h1>Sistema de Gestión Universitaria</h1>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙/☀️</button>
+  </header>
+
+  <img src="./imagen/university.jpg" alt="Imagen Central" class="central-image">
+
+  <div class="container">
+    <div class="card">
+      <h2>Login Universidad</h2>
+      <form id="form-login">
+        <input type="text" id="user" placeholder="Usuario" required>
+        <input type="password" id="pass" placeholder="Contraseña" required>
+        <button type="submit">Ingresar</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h2>Registro de Alumno</h2>
+      <form id="form-alumno">
+        <input type="text" placeholder="Nombre y Apellido" required>
+        <input type="text" placeholder="Usuario" required>
+        <input type="password" placeholder="Contraseña" required>
+        <input type="text" placeholder="DNI" required>
+        <input type="email" placeholder="Email" required>
+        <input type="tel" placeholder="Celular" required>
+        <input type="file" accept="image/*">
+        <button type="submit">Registrar Alumno</button>
+      </form>
+    </div>
+
+    <div class="card alumno-section">
+      <h2>Listado de Carreras</h2>
+      <select id="carrera-select">
+        <option value="">Seleccione una carrera</option>
+        <option>Ingeniería en Sistemas</option>
+        <option>Administración de Empresas</option>
+        <option>Psicología</option>
+        <option>Derecho</option>
+        <option>Medicina</option>
+        <option>Contador Público</option>
+        <option>Ingeniería Industrial</option>
+        <option>Licenciatura en Biotecnología</option>
+      </select>
+      <h3>Materias</h3>
+      <div id="materias-container">
+        <p>Seleccione una carrera para ver las materias.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

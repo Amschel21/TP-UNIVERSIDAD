@@ -1,0 +1,167 @@
+/* RESET STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f7fc;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s;
+  margin: 0;
+  padding: 0;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #e1e1e1;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: linear-gradient(135deg, #4CAF50, #3e8e41);
+  color: white;
+  font-size: 24px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+header img {
+  width: 50px;
+}
+
+header button {
+  background: none;
+  border: 2px solid white;
+  color: white;
+  padding: 5px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1.2rem;
+}
+
+header button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 40px;
+  gap: 30px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 15px;
+  padding: 30px;
+  width: 300px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.card h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.card input,
+.card select,
+.card button {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  background-color: #f9f9f9;
+}
+
+.card input:focus,
+.card select:focus,
+.card button:focus {
+  outline: none;
+  border-color: #4CAF50;
+}
+
+.card button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.card button:hover {
+  background-color: #45a049;
+}
+
+.alumno-section {
+  width: 400px;
+}
+
+.alumno-section select {
+  width: 100%;
+}
+
+.alumno-section h3 {
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.central-image {
+  display: block;
+  width: 90%;
+  margin: 40px auto;
+  border-radius: 8px;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+}
+
+/* Mejoras de modo oscuro y claro */
+body.dark-mode .card {
+  background-color: #222;
+  color: #e1e1e1;
+}
+
+body.dark-mode .card button {
+  background-color: #3e8e41;
+}
+
+body.dark-mode .card input,
+body.dark-mode .card select {
+  background-color: #333;
+  color: #fff;
+  border-color: #444;
+}
+
+body.dark-mode .card input:focus,
+body.dark-mode .card select:focus {
+  border-color: #4CAF50;
+}
+
+body.dark-mode .alumno-section h3,
+body.dark-mode .card h2 {
+  color: #e1e1e1;
+}
