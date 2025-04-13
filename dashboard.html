@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel del Alumno</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('dark-mode');
+    }
+
+    function logout() {
+      alert("Sesión cerrada correctamente.");
+      window.location.href = "index.html"; // Volver al login
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <img src="./imagen/universidad-imagen.jpeg" alt="Logo Universidad" class="logo">
+    <h1>Panel del Alumno</h1>
+    <div>
+      <button class="theme-toggle" onclick="toggleTheme()">🌙/☀️</button>
+      <button class="theme-toggle" onclick="logout()">⎋</button>
+    </div>
+  </header>
+
+  <img src="./imagen/university.jpg" alt="Imagen Central" class="central-image">
+
+  <div class="container">
+    <div class="card">
+      <h2>Bienvenido, Juan Pérez</h2>
+      <p><strong>Usuario:</strong> juan.perez</p>
+      <p><strong>Email:</strong> juanperez@correo.com</p>
+      <p><strong>Carrera:</strong> Ingeniería en Sistemas</p>
+      <p><strong>Estado:</strong> Activo</p>
+    </div>
+
+    <div class="card">
+      <h2>Materias del Cuatrimestre</h2>
+      <ul>
+        <li>Algoritmos y Estructuras de Datos</li>
+        <li>Matemática II</li>
+        <li>Inglés Técnico II</li>
+        <li>Arquitectura de Computadoras</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Próximos Exámenes</h2>
+      <ul>
+        <li>Matemática II - 15/04/2025</li>
+        <li>Arquitectura - 22/04/2025</li>
+        <li>Inglés Técnico II - 30/04/2025</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    &copy;2025 Universidad |
+    <a href="#">Soporte</a> |
+    <a href="#">Mi Perfil</a>
+  </footer>
+</body>
+</html>

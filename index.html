@@ -18,8 +18,10 @@
         e.preventDefault();
         const user = document.getElementById("user").value;
         const pass = document.getElementById("pass").value;
+        // Verificar las credenciales
         if(user === "univ2024" && pass === "Univ897ersidad") {
           alert("Login correcto. Bienvenido a la plataforma de administración.");
+          window.location.href = "dashboard.html"; // Redirige al dashboard
         } else {
           alert("Credenciales incorrectas");
         }
@@ -175,7 +177,7 @@
     <button class="theme-toggle" onclick="toggleTheme()">🌙/☀️</button>
   </header>
 
-  <img src="./imagen/university.jpg" alt="Imagen Central" class="central-image">
+  <img src="./imagen/universidad-imagen-act.jpg" alt="Imagen Central" class="central-image">
 
   <div class="container">
     <div class="card">
@@ -220,5 +222,12 @@
       </div>
     </div>
   </div>
+
+  <footer>
+    &copy;2025 Universidad |
+    <a href="#">Inicio</a> |
+    <a href="#">Contacto</a> |
+    <a href="#">Política de privacidad</a>
+  </footer>
 </body>
 </html>
